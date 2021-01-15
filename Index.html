@@ -14,13 +14,13 @@
     <title>Patang</title>
 </head>
 <style>
-#PrismResponse{
-max-height: 500px;
-max-width: 500px;
+    #PrismResponse {
+        max-height: 500px;
+        max-width: 500px;
 
-}
-
+    }
 </style>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -48,32 +48,44 @@ max-width: 500px;
 
     <div class="input-group mb-3 my-5 container ">
         <div>
-            <label class="visually-hidden" for="autoSizingSelect"></label>
-            <select class="form-select bg-primary text-white" id="autoSizingSelect">
-                <option id="GET" value="GET" selected>GET</option>
-                <option id="POST" value="POST">POST</option>
-                <option id="PUT" value="PUT">PUT</option>
+            <label class="visually-hidden" for="RequestType"></label>
+            <select class="form-select bg-primary text-white" id="RequestType">
+                <option value="GET" selected>GET</option>
+                <option  value="POST">POST</option>
+                <option value="PUT">PUT</option>
             </select>
         </div>
         <input type="text" class="form-control d-block mx-auto" id="Input" aria-label="Text input with dropdown button"
             placeholder="Enter Your URL">
     </div>
+    <div class="row container my-5 mb-5">
+        <div class="col">
+            <h5 class="text-center my-4">Please enter your Data to POST/PUT :</h5>
+        </div>
+        <div class="col form-floating ">
+            <textarea class="form-control " placeholder="Leave a comment here" id="DataInput"
+                style="height: 100px"></textarea>
+            <label for="DataInput"></label>
+        </div>
+    </div>
     <button type="button" class="btn btn-info mx-auto d-block btn-lg mb-5" id="SubmitBtn">Submit</button>
 
-<hr class="container text-secondary">
-     
 
-<div class="my-5 container">
+
+    <hr class="container text-secondary">
+
+
+    <div class="my-5 container">
         <h3 class="text-center mb-3 text-warning">Find your Response on the Box below
             <i class='fas fa-arrow-down text-warning' style='font-size:30px;'></i>
         </h3>
         <pre class="language-javascript">
-              <code id="PrismResponse" class="language-javascript text-cente" style="max-height: 500px;max-width: 500px;">
+              <code id="PrismResponse" class="language-javascript text-cente"placeholder="Your Response will appear Here" style="max-height: 500px;max-width: 500px;">
               </code>
        </pre>
     </div>
 
-    <div class="container my-5 text-center" id="myprism"></div>
+    
 
 
 
