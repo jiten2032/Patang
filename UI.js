@@ -6,10 +6,10 @@ function MyBtn() {
     let Datainput = document.getElementById("DataInput").value;
     let input = document.getElementById("Input").value;
 
+    let response = new Response;
 
-    let response = new Response
     if (RequestType.value == "GET") {
-
+     
         response.GETURL(input).then(function (MyData) {
             let getdata = JSON.stringify(MyData);
             // console.log(getdata)
@@ -21,15 +21,20 @@ function MyBtn() {
         })
 
     } else if (RequestType.value == "POST") {
-        console.log(Datainput)
-        response.POSTURL(input, Datainput).then(function (responsedata) {
-             
-            console.log(responsedata)
-        
+     
+        response.POSTURL(input,Datainput).then(function (MyPostData) {
+           
+            // console.log(postdata)
+            document.getElementById("PrismResponse").innerHTML = MyPostData;
+
         }).catch(function (error) {
             document.getElementById("PrismResponse").innerHTML = "Please enter a valid URL";
 
         })
+
+
+
+
 
     } else if (RequestType.value == "PUT") {
         console.log(input)

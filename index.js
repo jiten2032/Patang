@@ -6,20 +6,24 @@ class Response {
       let Data = await ResponseData.json();
       return Data;
    }
-   async POSTURL(posturl, resdata) {
-      let ResponsepostData = await fetch(posturl, {
+   async POSTURL(url, resdata) {
+      let ResponsepostData = await fetch(url, {
          method: 'POST',
-         body: JSON.stringify(resdata),
+         body:resdata,
          headers: {
             'Content-type': 'application/json; charset=UTF-8'
-         },
+         }
       });
-      let Datapost = await ResponsepostData.json();
+      let Datapost = await ResponsepostData.text();
       return Datapost;
    }
 }
 
-// let post = new GetResponse
+// class PostResponse {
+
+// }
+
+// let post = new Response
 
 // let postdata = {
 //    userId: '1',
