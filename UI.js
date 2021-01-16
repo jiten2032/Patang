@@ -37,8 +37,50 @@ function MyBtn() {
 
 
     } else if (RequestType.value == "PUT") {
-        console.log(input)
+        
+     
+            response.PUTURL(input,Datainput).then(function (MyPutData) {
+               
+                // console.log(postdata)
+                document.getElementById("PrismResponse").innerHTML = MyPutData;
+    
+            }).catch(function (error) {
+                document.getElementById("PrismResponse").innerHTML = "Please enter a valid URL";
+    
+            })
+    
+        
     }
+    else if (RequestType.value == "PATCH") {
+        
+     
+        response.PATCHURL(input,Datainput).then(function (MyPatchData) {
+           
+            // console.log(postdata)
+            document.getElementById("PrismResponse").innerHTML = MyPatchData;
+
+        }).catch(function (error) {
+            document.getElementById("PrismResponse").innerHTML = "Please enter a valid URL";
+
+        })
+
+    
+}
+else if (RequestType.value == "DELET") {
+        
+     
+    response.DELETURL(input).then(function (MyDeletData) {
+       
+        // console.log(postdata)
+        document.getElementById("PrismResponse").innerHTML = MyDeletData;
+
+    }).catch(function (error) {
+        document.getElementById("PrismResponse").innerHTML = "Please enter a valid URL";
+
+    })
+
+
+}
     else {
         document.getElementById("PrismResponse").innerHTML = "";
     }
