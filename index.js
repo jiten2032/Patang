@@ -51,18 +51,3 @@ class Response {
    }
 }
 
-// class PostResponse {
-
-// }
-
-// let post = new Response
-
-// let postdata = {
-//    userId: '1',
-//    id: '1',
-//    title: "my post",
-//    body: "post-1"
-//    }
-//    post.POSTURL('https://jsonplaceholder.typicode.com/users',postdata).then(function(data){
-//       console.log(data)
-//    })
